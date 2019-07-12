@@ -12,3 +12,9 @@ serialport = setup_serial_communication(port, baud, 1)
 avg = collect_datapoint(500, serialport)
 print(avg)
 
+#tests output file
+
+f = open("test_output.txt", "a")
+output_data(f, avg)
+
+serialport.close()

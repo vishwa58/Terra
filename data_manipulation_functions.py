@@ -23,3 +23,12 @@ def collect_datapoint(sample_num, serial_object):
         datalist.append(data)
     average_value = mean(datalist)
     return average_value
+
+
+
+#This function will need to be edited later to export matrices rather than individual data points
+def output_data(file, value):
+    value = str(value)
+    file.write(value)
+    file.write('\n')
+    file.close()
