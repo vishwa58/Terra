@@ -1,7 +1,7 @@
 #This file was created on 7/11/19 by Vishwa Nathan (vishwan56@gmail.com) for Terra Robotics
 
-import serial
-from statistics import mean
+#import serial
+#from statistics import mean
 
 
 
