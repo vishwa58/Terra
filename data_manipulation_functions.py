@@ -6,6 +6,9 @@ from statistics import mean
 
 
 
+#This file contains information for the program that collects data from the arduino. 
+
+
 #This function sets up a serial communication port. It requires the name of the COM port, the baudrate and 
 #the timeout length. It then returns a serial object
 
