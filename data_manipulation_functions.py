@@ -21,7 +21,8 @@ def collect_datapoints(sample_num, serial_object):
     for i in range (500):
         data = float(serial_object.readline().decode('ascii'))
         datalist.append(data)
-    return datalist
+    datapoint = mean(datalist)
+    return datapoint
 
 
 #This function will need to be edited later to export matrices rather than individual data points

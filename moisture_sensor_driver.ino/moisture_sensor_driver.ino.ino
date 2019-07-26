@@ -13,6 +13,7 @@ void setup() {
 void loop() {
 
   moisture_level = analogRead(A0);
+  delay(2);
   Serial.println(moisture_level);
  
 
