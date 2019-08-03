@@ -12,7 +12,6 @@ from statistics import mean
 #This function sets up a serial communication port. It requires the name of the COM port, the baudrate and 
 #the timeout length. It then returns a serial object
 
-
 def setup_serial_communication( port, baudrate, timeout):
     ser = serial.Serial(port, baudrate, timeout=timeout)
     return ser

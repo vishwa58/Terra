@@ -13,20 +13,20 @@ def find_column(percentage, dataframe):
         if (col==percentage): #if the user input is the same as the value in the column, returns the column
             return col 
 
-#This function is used n conjunction with
+#This function is used n conjunction with find_column to return the frst empty row in the column
 def find_row(column, dataframe):
-     for index, row in  enumerate(dataframe.iloc[:, column]):
-         if (pd.isna(dataframe.iloc[index, column])):
+     for index, row in  enumerate(dataframe.iloc[:, column]): #loops through the rows in the column
+         if (pd.isna(dataframe.iloc[index, column])): #If the row is empty, return thhe row
              return index+2 #the plus two is there because pandas is zero indexed and because the first row in excel is not counted in PANDAS, so two needs to be added to the index
 
 
-    
+ #This function appends a datapoint to the first empty row in a column   
 def append_data(percentage, dataframe, worksheet, sensor_data):
-    column =find_column(percentage, dataframe)
-    letter_column = xlw.utility.xl_col_to_name(column)
-    row = find_row(column, dataframe)
-    cell_loc = letter_column + str(row)
-    cell =worksheet[cell_loc]
-    cell.value = sensor_data
+    column =find_column(percentage, dataframe) #finds specified column
+    letter_column = xlw.utility.xl_col_to_name(column) #converts that column to an excel letter. ex. 0=A, 1=B 27=AB...
+    row = find_row(column, dataframe) #finds first empty row
+    cell_loc = letter_column + str(row) #combines the column and row to give cell location. ex: A1, B4, AC6..
+    cell =worksheet[cell_loc] #sets a cell equal to that locattion
+    cell.value = sensor_data #sets the value of thhat cell equal to the sensor data
 
 
